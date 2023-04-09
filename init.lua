@@ -9,14 +9,11 @@ return {
       },
     },
     config = {
-      -- denols = function(opts)
-      --   opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-      --   return opts
-      -- end,
       tsserver = function(opts)
         opts.root_dir = require("lspconfig.util").root_pattern "package.json"
         return opts
       end,
+      -- Prettier 는 eslint 에 넘겨서 처리함
       -- prettier = function(opts)
       --   opts.filetypes = {
       --     "typescript",
@@ -57,16 +54,19 @@ return {
         --     end,
         --   })
         -- end,
-        prettierd = function()
-          null_ls.register(null_ls.builtins.formatting.prettierd.with {
-            condition = function(utils)
-              return utils.root_has_file "package.json"
-                or utils.root_has_file ".prettierrc"
-                or utils.root_has_file ".prettierrc.json"
-                or utils.root_has_file ".prettierrc.js"
-            end,
-          })
-        end,
+        --
+        -- Prettier 는 eslint 에 넘겨서 처리함
+        --
+        -- prettierd = function()
+        --   null_ls.register(null_ls.builtins.formatting.prettierd.with {
+        --     condition = function(utils)
+        --       return utils.root_has_file "package.json"
+        --         or utils.root_has_file ".prettierrc"
+        --         or utils.root_has_file ".prettierrc.json"
+        --         or utils.root_has_file ".prettierrc.js"
+        --     end,
+        --   })
+        -- end,
         eslint_d = function()
           null_ls.register(null_ls.builtins.diagnostics.eslint_d.with {
             condition = function(utils)
