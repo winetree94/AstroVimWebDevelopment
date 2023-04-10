@@ -24,8 +24,6 @@ return {
     opts = {
       ensure_installed = {
         "emmit-ls",
-        "prettier",
-        "prettierd",
         "eslint_d",
         "eslint-lsp",
         "html-lsp",
