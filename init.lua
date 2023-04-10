@@ -1,5 +1,5 @@
 return {
-  colorscheme = "catppuccin-mocha",
+  colorscheme = "carbonfox",
   lsp = {
     formatting = {
       -- control auto formatting on save
@@ -17,7 +17,6 @@ return {
       -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
       -- eslint 에 의한 format 을 사용할 것이므로 비활성화 처리
       disabled = {
-        "tsserver",
         "prettier",
         "html",
       },
@@ -30,15 +29,15 @@ return {
     },
   },
   -- Configure require("lazy").setup() options
-  lazy = {
-    defaults = { lazy = true },
-    performance = {
-      rtp = {
-        -- customize default disabled vim plugins
-        disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
-      },
-    },
-  },
+  -- lazy = {
+  --   defaults = { lazy = true },
+  --   performance = {
+  --     rtp = {
+  --       -- customize default disabled vim plugins
+  --       disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
+  --     },
+  --   },
+  -- },
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
