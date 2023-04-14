@@ -10,7 +10,8 @@ return {
 
     -- eslint 를 통해 진단 및 포맷팅이 동작하도록 설정
     config.sources = {
-      null_ls.builtins.formatting.eslint_d.with {
+
+      null_ls.builtins.formatting.eslint.with {
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -18,14 +19,10 @@ return {
           "typescriptreact",
           "typescript",
         },
-        condition = function(utils)
-          return utils.root_has_file "package.json"
-              or utils.root_has_file ".eslintrc.json"
-              or utils.root_has_file ".eslintrc.js"
-        end,
+        condition = function(utils) return utils.root_has_file ".eslintrc.json" or utils.root_has_file ".eslintrc.js" end,
       },
 
-      null_ls.builtins.diagnostics.eslint_d.with {
+      null_ls.builtins.diagnostics.eslint.with {
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -33,11 +30,7 @@ return {
           "typescriptreact",
           "typescript",
         },
-        condition = function(utils)
-          return utils.root_has_file "package.json"
-              or utils.root_has_file ".eslintrc.json"
-              or utils.root_has_file ".eslintrc.js"
-        end,
+        condition = function(utils) return utils.root_has_file ".eslintrc.json" or utils.root_has_file ".eslintrc.js" end,
       },
     }
     return config -- return final config table

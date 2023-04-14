@@ -8,10 +8,8 @@ return {
       ensure_installed = {
         "html",
         "cssls",
-        "cssmodules_ls",
         "tailwindcss",
         "tsserver",
-        "tailwindcss",
         "angularls",
         "eslint",
       },
@@ -24,13 +22,11 @@ return {
     opts = {
       ensure_installed = {
         "emmit-ls",
-        "eslint_d",
         "eslint-lsp",
         "html-lsp",
         "typescript-language-server",
         "angular-language-server",
         "css-lsp",
-        "cssmodules-language-server",
         "tailwindcss-language-server",
         "stylua",
         "lua-language-server",
