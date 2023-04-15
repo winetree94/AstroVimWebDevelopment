@@ -11,7 +11,8 @@ return {
     -- eslint 를 통해 진단 및 포맷팅이 동작하도록 설정
     config.sources = {
 
-      null_ls.builtins.formatting.eslint.with {
+      -- 코드 정렬은 성능 이점이 있는 eslint_d 로 수행
+      null_ls.builtins.formatting.eslint_d.with {
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -22,6 +23,7 @@ return {
         condition = function(utils) return utils.root_has_file ".eslintrc.json" or utils.root_has_file ".eslintrc.js" end,
       },
 
+      -- 코드 진단은 eslint_d 에서 올바르게 수행하지 못하므로, eslint 로 수행
       null_ls.builtins.diagnostics.eslint.with {
         filetypes = {
           "javascript",

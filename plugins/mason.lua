@@ -23,6 +23,7 @@ return {
       ensure_installed = {
         "emmit-ls",
         "eslint-lsp",
+        "eslint_d",
         "html-lsp",
         "typescript-language-server",
         "angular-language-server",
