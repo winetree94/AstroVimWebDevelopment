@@ -1,4 +1,5 @@
 return {
+  colorscheme = "nightfox",
   lsp = {
     formatting = {
       -- control auto formatting on save
